@@ -45,6 +45,6 @@ pipeline {
             sh "docker rmi -f node-html ${env.NGINX_IMAGE}"
         }
     }
-    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Shiv1002/DevOps.git']], gitTool: 'gitInstall'])
+    
 
 }
