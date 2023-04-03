@@ -20,6 +20,7 @@ pipeline {
                 docker { image "${DOCKER_IMAGE}" }
             }
             steps {
+                sh "cp ${WORKSPACE}/package.json ."
                 sh "npm install" // Add this line
                 sh "npm run build"
                 sh "docker run -d --name ${CONTAINER_NAME} -p 80:80 -v ${PWD}/${PUBLISH_DIR}:${PUBLISH_DIR} ${DOCKER_IMAGE}"
