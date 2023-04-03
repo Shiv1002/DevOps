@@ -12,7 +12,7 @@ pipeline {
         stage("Build") {
             steps {
                 // Checkout HTML files from Git repository
-                git branch: 'master', url: env.GIT_REPO
+                git branch: 'main', url: env.GIT_REPO
                 
                 // Build Node container with HTML files
                 sh "docker build -t node-html ."
@@ -45,4 +45,6 @@ pipeline {
             sh "docker rmi -f node-html ${env.NGINX_IMAGE}"
         }
     }
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Shiv1002/DevOps.git']], gitTool: 'gitInstall'])
+
 }
