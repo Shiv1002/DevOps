@@ -1,6 +1,9 @@
 pipeline {
-    agent any
-    
+    agent {
+        docker { 
+            image 'docker:20.10.8'
+        }
+    }
     environment {
         NODE_IMAGE = "node:latest"
         NGINX_IMAGE = "nginx:latest"
