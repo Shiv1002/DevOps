@@ -4,8 +4,8 @@ pipeline {
     environment {
         NODE_IMAGE = "node:latest"
         NGINX_IMAGE = "nginx:latest"
-        GIT_REPO = "https://github.com/your-git-repo.git"
-        HTML_FOLDER = "your-html-folder"
+        GIT_REPO = "https://github.com/Shiv1002/DevOps.git"
+        HTML_FOLDER = "htmlFolder"
     }
     
     stages {
